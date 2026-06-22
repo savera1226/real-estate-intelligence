@@ -1,0 +1,12 @@
+streamlit
+pydantic
+langchain
+langchain-groq
+langchain-chroma
+langchain-huggingface
+langchain-community
+langchain-core
+unstructured
+duckduckgo-search
+pandas
+sentence-transformers
