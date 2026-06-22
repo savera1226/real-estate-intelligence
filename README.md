@@ -91,7 +91,7 @@ flowchart TD
 | **Frontend**        | Streamlit               | Interactive dashboard layout and UI components                        |
 | **Orchestration**   | LangChain Core          | RAG pipeline configuration and tool execution routing                 |
 | **LLM**             | Llama-3.3-70B-Versatile | Analytical reasoning, summarization, and structured output generation |
-| **Inference**       | Groq                    | Low-latency model inference                                           |
+| **Inference**       | Groq                    | Fast, low-latency model inference                                     |
 | **Vector Database** | ChromaDB                | Embedding storage and retrieval                                       |
 | **Embeddings**      | all-MiniLM-L6-v2        | Sentence embedding generation                                         |
 | **Validation**      | Pydantic                | JSON schema validation and type enforcement                           |
@@ -117,13 +117,13 @@ flowchart TD
 ```text
 real-estate-intelligence/
 │
-├── main.py                 # Streamlit UI layout and application orchestration
-├── rag.py                  # RAG mechanics, tool setups, and Pydantic validation schemas
-├── requirements.txt        # Hardened operational dependency manifest
-├── README.md               # Codebase documentation and technical specifications
-├── .gitignore              # Tracking exception instructions (.env, local DB files, .venv)
+├── main.py                 # Streamlit UI and application orchestration
+├── rag.py                  # RAG pipeline, retrieval logic, embeddings, and schemas
+├── requirements.txt        # Project dependencies
+├── README.md               # Project documentation
+├── .gitignore              # Excluded files and folders
 │
-└── assets/                 # Graphics folder for documentation media
+└── assets/
     ├── dashboard.png
     └── report.png
 ```
@@ -135,7 +135,7 @@ real-estate-intelligence/
 ### 1. Clone the Repository
 
 ```bash
-git clone [https://github.com/savera1226/real-estate-intelligence.git](https://github.com/savera1226/real-estate-intelligence.git)
+git clone https://github.com/savera1226/real-estate-intelligence.git
 cd real-estate-intelligence
 ```
 
@@ -179,11 +179,9 @@ streamlit run main.py
 
 ## 🌐 Deployment
 
-The application architecture is optimized for immediate configuration and hosting on Streamlit Community Cloud.
+The application can be deployed on Streamlit Community Cloud.
 
 ### Required Secret
-
-To safely run the pipeline, insert your target credential key directly inside Advanced Settings -> Secrets:
 
 ```toml
 GROQ_API_KEY = "your_actual_groq_api_key_here"
@@ -191,18 +189,19 @@ GROQ_API_KEY = "your_actual_groq_api_key_here"
 
 ### Deployment Steps
 
-1. Push your repository code securely to GitHub.
-2. Link your repository workspace inside share.streamlit.io.
-3. Set the Main Entry Point file path to main.py.
-4. Configure secrets parameters and deploy.
+1. Push the repository to GitHub.
+2. Connect the repository in Streamlit Community Cloud.
+3. Set `main.py` as the entry point.
+4. Configure secrets.
+5. Deploy.
 
 ---
 
 ## 📈 What I Learned
 
-* Designing clean, session-isolated data spaces inside vector tools to protect multi-user data.
+* Designing session-isolated data storage using vector databases
 * Building hybrid retrieval architectures combining local knowledge and live web search
-* Enforcing structured JSON data outputs out of open-ended LLMs using Pydantic tracking models.
+* Enforcing structured outputs with Pydantic
 * Developing Streamlit-based AI applications
 * Separating UI and retrieval logic into modular components (`main.py` and `rag.py`)
 
@@ -213,15 +212,15 @@ GROQ_API_KEY = "your_actual_groq_api_key_here"
 * [ ] Multi-document comparative analysis
 * [ ] Historical real estate trend forecasting
 * [ ] Geographic heat map visualizations
-* [ ] Automated server-side PDF report generation and compilation exports.
-* [ ] Orchestrating collaborative Multi-Agent secondary research workflows.
-* [ ] Pluggable user authentication constraints and persistent database storage.
+* [ ] Automated PDF report generation
+* [ ] Multi-agent research workflows
+* [ ] User authentication and persistent storage
 
 ---
 
 ## ✍️ Author
 
-**KrishnaSavera**
+**Savera**
 
 Aspiring GenAI / Machine Learning Engineer
 
@@ -234,5 +233,8 @@ Currently building practical projects to deepen my understanding of modern AI sy
 ## 📄 License
 
 This project is licensed under the **MIT License**.
+
+
+
 
 
