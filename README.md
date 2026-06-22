@@ -75,30 +75,33 @@ Instead of storing all vectors inside a single shared collection and relying on 
 
 ```mermaid
 flowchart TD
-    A[Documents / URLs] --> B[Text Extraction & Chunking]
-    B --> C[HuggingFace Embeddings]
-    C --> D[Session-Isolated ChromaDB]
+    A[Documents or URLs] --> B[Text Chunking]
+    B --> C[Embeddings]
+    C --> D[ChromaDB]
     D --> E[Hybrid Retrieval]
-    F[Live Web Search] --> E
-    E --> G[Llama-3.3-70B-Versatile via Groq]
-    G --> H[Pydantic Structured Output]
+
+    F[Web Search] --> E
+
+    E --> G[Llama 3.3 70B]
+    G --> H[Pydantic Validation]
     H --> I[Streamlit Dashboard]
+...
+```
 
 ## 🛠️ Technology Stack
 
-| Layer               | Technology              | Purpose                                                               |
-| ------------------- | ----------------------- | --------------------------------------------------------------------- |
-| **Frontend**        | Streamlit               | Interactive dashboard layout and UI components                        |
-| **Orchestration**   | LangChain Core          | RAG pipeline configuration and tool execution routing                 |
-| **LLM**             | Llama-3.3-70B-Versatile | Analytical reasoning, summarization, and structured output generation |
-| **Inference**       | Groq                    | Fast, low-latency model inference                                     |
-| **Vector Database** | ChromaDB                | Embedding storage and retrieval                                       |
-| **Embeddings**      | all-MiniLM-L6-v2        | Sentence embedding generation                                         |
-| **Validation**      | Pydantic                | JSON schema validation and type enforcement                           |
-| **Search**          | DuckDuckGo Search       | Live web context retrieval                                            |
-| **Data Processing** | Pandas                  | Data transformation and visualization support                         |
+| Layer               | Technology              | Purpose                               |
+| ------------------- | ----------------------- | ------------------------------------- |
+| **Frontend**        | Streamlit               | Interactive dashboard and UI          |
+| **Orchestration**   | LangChain               | RAG pipeline orchestration            |
+| **LLM**             | Llama-3.3-70B-Versatile | Reasoning and analysis                |
+| **Inference**       | Groq                    | Fast model inference                  |
+| **Vector Database** | ChromaDB                | Embedding storage and retrieval       |
+| **Embeddings**      | all-MiniLM-L6-v2        | Text vectorization                    |
+| **Validation**      | Pydantic                | Structured output validation          |
+| **Search**          | DuckDuckGo Search       | Live web context                      |
+| **Data Processing** | Pandas                  | Data transformation and visualization |
 
----
 
 ## 📸 Screenshots
 
