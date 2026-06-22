@@ -5,14 +5,19 @@ from rag import execute_structured_query, ingest_file_bytes, process_urls, gener
 
 st.set_page_config(page_title="Real Estate Research Platform", page_icon="🏢", layout="wide")
 
-st.markdown("""
+st.markdown(
+    """
     <style>
-    .stApp { background: linear-gradient(rgba(248, 249, 250, 0.95), rgba(244, 245, 247, 0.95)), url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1920") no-repeat center center fixed; background-size: cover; }
-    [data-testid="stSidebar"] { background-color: #0f172a !important; }
-    [data-testid="stSidebar"] * { color: #f8fafc !important; }
-    .metric-card { background: white; padding: 15px; border-radius: 8px; border-left: 4px solid #2563eb; box-shadow: 0 2px 4px rgba(0,0,0,0.1); font-weight: bold; }
+    .stApp {
+        background-image: linear-gradient(rgba(14, 17, 23, 0.85), rgba(14, 17, 23, 0.85)), url("assets/skyscraper.png");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
     </style>
-""", unsafe_allow_html=True)
+    """,
+    unsafe_allow_html=True
+)
 
 if "tenant_id" not in st.session_state: st.session_state.tenant_id = str(uuid.uuid4())
 if "messages" not in st.session_state: st.session_state.messages = []
