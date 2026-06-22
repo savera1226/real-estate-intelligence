@@ -9,7 +9,8 @@ st.markdown(
     """
     <style>
     .stApp {
-        background-image: linear-gradient(rgba(14, 17, 23, 0.85), rgba(14, 17, 23, 0.85)), url("assets/skyscraper.png");
+        background-image: linear-gradient(rgba(14, 17, 23, 0.85), rgba(14, 17, 23, 0.85)), 
+                         url("https://raw.githubusercontent.com/savera1226/real-estate-intelligence/main/assets/skyscraper.png");
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
@@ -18,7 +19,6 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-
 if "tenant_id" not in st.session_state: st.session_state.tenant_id = str(uuid.uuid4())
 if "messages" not in st.session_state: st.session_state.messages = []
 
