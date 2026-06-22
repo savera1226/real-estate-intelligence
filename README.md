@@ -223,7 +223,7 @@ GROQ_API_KEY = "your_actual_groq_api_key_here"
 
 ## ✍️ Author
 
-**Savera**
+**Krishna**
 
 Aspiring GenAI / Machine Learning Engineer
 
